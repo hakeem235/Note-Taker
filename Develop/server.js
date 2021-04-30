@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 var data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"))
 
 app.use(express.urlencoded({
