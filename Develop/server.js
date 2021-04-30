@@ -3,9 +3,7 @@ const path = require('path');
 const fs = require('fs');
 
 var app = express();
-
 var PORT = 3000;
-
 var data = JSON.parse(fs.readFileSync("./db/db.json", "utf8"))
 
 app.use(express.urlencoded({
@@ -30,7 +28,6 @@ app.get("/api/notes/:id", (req, res) => {
 
 
 // API POST REQUSET
-
 app.post("/api/notes", (req, res) => {
     let newNote = req.body;
 
@@ -45,7 +42,6 @@ app.post("/api/notes", (req, res) => {
 })
 
 //DELETE A SPECIFIC NOTE 
-
 app.delete("/api/notes/:id", (req, res) => {
     let noteId = req.params.id;
 
@@ -63,8 +59,4 @@ app.delete("/api/notes/:id", (req, res) => {
 })
 
 // Starts the server to begin listening
-
 app.listen(PORT, () => console.log(`App listening on PORT ${PORT}`))
-
-
-fun
